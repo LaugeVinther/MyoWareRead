@@ -22,8 +22,6 @@ chan = AnalogIn(ads, ADS.P0)
 #csv
 file = open("/media/usb/data_log.csv", "a") 
 
-i=0 
-
 if os.stat("/home/pi/data_log.csv").st_size == 0: 
     file.write("{:>5}\t{:>5}".format("raw", "v\n"))
 
@@ -38,7 +36,8 @@ while True:
         if keyboard.is_pressed('s'):  # if key 's' is pressed 
             print('******Stopped data collecting*******')
             break  # finishing the loop
-        
-
+    except:
+        break
+    
 file.flush()
 file.close() 
