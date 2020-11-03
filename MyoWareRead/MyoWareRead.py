@@ -40,4 +40,4 @@ except KeyboardInterrupt:
 
   
 #file.flush()
-file.close() 
+f.close() 
