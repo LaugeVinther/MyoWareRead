@@ -34,9 +34,9 @@ while True:
     file.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage)+"\n")
 
  # used try so that if user pressed other than the given key error will not be shown
-    if keyboard.is_pressed('s'):  # if key 's' is pressed 
-        print('******Stopped data collecting*******')
-        break  # finishing the loop
+    #if keyboard.is_pressed('s'):  # if key 's' is pressed 
+     #   print('******Stopped data collecting*******')
+      #  break  # finishing the loop
 
     
 file.flush()
