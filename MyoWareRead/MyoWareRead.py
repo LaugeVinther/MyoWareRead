@@ -39,5 +39,6 @@ except KeyboardInterrupt:
     pass
 
   
-#file.flush()
+f.flush()
 f.close() 
+print("Jeg nåede herned")
