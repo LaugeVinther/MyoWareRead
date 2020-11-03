@@ -20,24 +20,24 @@ chan = AnalogIn(ads, ADS.P0)
 # Create differential input between channel 0 and 1
 # chan = AnalogIn(ads, ADS.P0, ADS.P1)
 
-#csv
-file = open("/media/usb/data_log.csv", "a") 
+f = open("/media/usb/data.txt", "a")
 
-if os.stat("/media/usb/data_log.csv").st_size == 0: 
-    file.write("{:>5}\t{:>5}".format("raw", "v\n"))
+##csv
+#file = open("/media/usb/data_log.csv", "a") 
 
-print("{:>5}\t{:>5}".format("raw", "v"))
+#if os.stat("/media/usb/data_log.csv").st_size == 0: 
+#    file.write("{:>5}\t{:>5}".format("raw", "v\n"))
 
+#print("{:>5}\t{:>5}".format("raw", "v"))
 
-while True:
-    print("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
-    file.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage)+"\n")
+try:
+    while True:
+        print("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
+        file.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage)+"\n")
+        time.sleep(0.01)
+except KeyboardInterrupt:
+    pass
 
- # used try so that if user pressed other than the given key error will not be shown
-    #if keyboard.is_pressed('s'):  # if key 's' is pressed 
-     #   print('******Stopped data collecting*******')
-      #  break  # finishing the loop
-
-    
-file.flush()
+  
+#file.flush()
 file.close() 
