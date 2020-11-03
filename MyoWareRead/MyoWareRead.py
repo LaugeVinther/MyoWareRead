@@ -23,7 +23,7 @@ chan = AnalogIn(ads, ADS.P0)
 #csv
 file = open("/media/usb/data_log.csv", "a") 
 
-if os.stat("/home/pi/data_log.csv").st_size == 0: 
+if os.stat("/media/usb/data_log.csv").st_size == 0: 
     file.write("{:>5}\t{:>5}".format("raw", "v\n"))
 
 print("{:>5}\t{:>5}".format("raw", "v"))
