@@ -34,12 +34,11 @@ try:
     while True:
         print("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
         #f.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
-        f.write(chan.value + ";" + chan.voltage + "\n")
+        f.write(str(chan.value) + ";" + str(chan.voltage) + "\n")
         time.sleep(0.01)
 except KeyboardInterrupt:
     pass
 
-  
 f.flush()
 f.close() 
 print("Jeg nåede herned")
