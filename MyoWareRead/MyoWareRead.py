@@ -33,7 +33,8 @@ f = open("/media/usb/data_log.csv", "a")
 try:
     while True:
         print("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
-        f.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
+        #f.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
+        f.write(chan.value + ";" + chan.voltage + "\n")
         time.sleep(0.01)
 except KeyboardInterrupt:
     pass
