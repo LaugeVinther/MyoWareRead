@@ -20,10 +20,10 @@ chan = AnalogIn(ads, ADS.P0)
 # Create differential input between channel 0 and 1
 # chan = AnalogIn(ads, ADS.P0, ADS.P1)
 
-f = open("/media/usb/data.txt", "a")
+#f = open("/media/usb/data.txt", "a")
 
 ##csv
-#file = open("/media/usb/data_log.csv", "a") 
+f = open("/media/usb/data_log.csv", "a") 
 
 #if os.stat("/media/usb/data_log.csv").st_size == 0: 
 #    file.write("{:>5}\t{:>5}".format("raw", "v\n"))
@@ -33,7 +33,7 @@ f = open("/media/usb/data.txt", "a")
 try:
     while True:
         print("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
-        f.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage)+"\n")
+        f.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
         time.sleep(0.01)
 except KeyboardInterrupt:
     pass
