@@ -33,7 +33,7 @@ f = open("/media/usb/data.txt", "a")
 try:
     while True:
         print("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
-        file.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage)+"\n")
+        f.write("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage)+"\n")
         time.sleep(0.01)
 except KeyboardInterrupt:
     pass
