@@ -8,6 +8,8 @@ import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 import keyboard
 
+SAMPLES = 1000
+
 # Create the I2C bus
 i2c = busio.I2C(board.SCL, board.SDA)
 
@@ -24,6 +26,9 @@ chan = AnalogIn(ads, ADS.P0)
 ##csv
 #f = open("/mnt/mydisk/1_no_noise.csv", "a") 
 
+data = [None] * SAMPLES
+
+start = time.monotonic()
 
 try:
     while True:
