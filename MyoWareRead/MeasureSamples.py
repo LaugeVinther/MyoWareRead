@@ -15,7 +15,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 
-ads.data_rate = RATE
+#ads.data_rate = RATE
 
 # Create single-ended input on channel 0
 chan0 = AnalogIn(ads, ADS.P0)
@@ -33,4 +33,4 @@ end = time.monotonic()
 total_time = end - start
 
 print("Time of capture: {}s".format(total_time))
-print("Sample rate requested={} actual={}".format(RATE, SAMPLES / total_time))
+print("Actual={}".format(SAMPLES / total_time))
