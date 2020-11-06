@@ -26,9 +26,6 @@ chan = AnalogIn(ads, ADS.P0)
 ##csv
 #f = open("/mnt/mydisk/1_no_noise.csv", "a") 
 
-data = [None] * SAMPLES
-
-start = time.monotonic()
 
 try:
     while True:
