@@ -16,6 +16,8 @@ try:
 except:
     print("Error")
 
+
+time.sleep(2)
 start = time.monotonic()
 
 # Read the same channel over and over

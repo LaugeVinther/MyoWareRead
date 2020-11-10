@@ -21,10 +21,6 @@ ads.data_rate = RATE
 # Create single-ended input on channel 0
 chan0 = AnalogIn(ads, ADS.P0)
 
-data_array = []
-
-while true:
-        data_array.append(chan0.value)
 
 data = [None] * SAMPLES
 
