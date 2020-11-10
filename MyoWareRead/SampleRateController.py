@@ -13,6 +13,8 @@ data = [None] * SAMPLES
 
 try:
     thread.start_new_thread(SC.GetSamples())
+except:
+    print("Error")
 
 start = time.monotonic()
 
