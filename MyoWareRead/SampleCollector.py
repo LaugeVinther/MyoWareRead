@@ -25,7 +25,9 @@ data_array = []
 
 def GetSamples():
     while true:
-        data_array.append(chan0.voltage)
+        #data_array.append(chan0.voltage)
+        data_array.append(1)
+
 
 def GetOneSample():
     return data_array[-1]
