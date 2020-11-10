@@ -23,21 +23,12 @@ chan0 = AnalogIn(ads, ADS.P0)
 
 data_array = []
 
-while true:
-        data_array.append(chan0.value)
+def GetSamples():
+    while true:
+            data_array.append(chan0.value)
 
-data = [None] * SAMPLES
+def GetOneSample():
+    return data_array[-1]
 
-start = time.monotonic()
-
-# Read the same channel over and over
-for i in range(SAMPLES):
-    data[i] = chan0.value
-    time.sleep(0.001)
-    #print(str(chan0.value))
-
-end = time.monotonic()
-total_time = end - start
-
-print("Time of capture: {}s".format(total_time))
-print("Actual={}".format(SAMPLES / total_time))
+def ClearSamples():
+    data_array.clear()
