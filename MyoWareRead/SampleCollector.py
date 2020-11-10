@@ -25,7 +25,7 @@ data_array = []
 
 def GetSamples():
     while true:
-            data_array.append(chan0.value)
+        data_array.append(chan0.value)
 
 def GetOneSample():
     return data_array[-1]
