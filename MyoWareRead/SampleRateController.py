@@ -12,12 +12,12 @@ SAMPLES = 1000
 data = [None] * SAMPLES
 
 try:
-    _thread.start_new_thread(SC.GetSamples())
+    _thread.start_new_thread(SC.GetSamples)
 except:
     print("Error")
 
 
-time.sleep(2)
+#time.sleep(2)
 start = time.monotonic()
 
 # Read the same channel over and over
