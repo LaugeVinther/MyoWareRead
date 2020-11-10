@@ -5,14 +5,14 @@ import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.ads1x15 import Mode
 from adafruit_ads1x15.analog_in import AnalogIn
 import SampleCollector as SC
-import thread
+import _thread
 
 SAMPLES = 1000
 
 data = [None] * SAMPLES
 
 try:
-    thread.start_new_thread(SC.GetSamples())
+    _thread.start_new_thread(SC.GetSamples())
 except:
     print("Error")
 
