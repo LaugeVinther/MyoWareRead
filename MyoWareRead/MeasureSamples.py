@@ -28,7 +28,7 @@ start = time.monotonic()
 # Read the same channel over and over
 for i in range(SAMPLES):
     data[i] = chan0.value
-    time.sleep(0.01)
+    time.sleep(0.001)
     #print(str(chan0.value))
 
 end = time.monotonic()
