@@ -40,9 +40,9 @@ def ClearSamples():
     data_array.clear()
 
 try:
-    _thread.start_new_thread(GetSamples, args())
-except:
-    print("Error")
+    _thread.start_new_thread(GetSamples)
+except Exception as e:
+    print(e)
 
 
 #time.sleep(2)
