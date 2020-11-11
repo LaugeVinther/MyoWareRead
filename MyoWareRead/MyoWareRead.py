@@ -26,7 +26,7 @@ chan3 = AnalogIn(ads, ADS.P3)
 
 
 ##åben fil
-f = open("/mnt/mydisk/3.txt", "a") 
+f = open("/mnt/mydisk/4.txt", "a") 
 
 data0 = []
 data1 = []
