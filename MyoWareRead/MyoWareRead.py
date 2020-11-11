@@ -15,18 +15,18 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 
-# Create single-ended input on channel 0
+ads.data_rate = 3300
+ads.mode = Mode.CONTINUOUS
+
+# Create single-ended input on channel 0,1,2,3
 chan0 = AnalogIn(ads, ADS.P0)
 chan1 = AnalogIn(ads, ADS.P1)
 chan2 = AnalogIn(ads, ADS.P2)
 chan3 = AnalogIn(ads, ADS.P3)
 
-ads.data_rate = 3300
-ads.mode = Mode.CONTINUOUS
-
 
 ##åben fil
-f = open("/mnt/mydisk/2.txt", "a") 
+f = open("/mnt/mydisk/3.txt", "a") 
 
 data0 = []
 data1 = []
@@ -34,6 +34,8 @@ data2 = []
 data3 = []
 
 start = time.monotonic()
+
+print("Måler...")
 
 try:
     while True:
@@ -52,7 +54,7 @@ total_time = end - start
 
 print("Gemmer array til fil...")
 
-f.write("Tid: " + str(total_time))
+f.write("Tid: " + str(total_time) + "\n\r")
 
 
 for i in range(len(data3)):
