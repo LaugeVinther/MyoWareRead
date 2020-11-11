@@ -43,7 +43,7 @@ try:
         data1.append(chan1.voltage)
         data2.append(chan2.voltage)
         data3.append(chan3.voltage)
-        print(str(chan0) + "\t" + str(chan1) + "\t" + str(chan2) + "\t" + str(chan3) + "\n\r")
+        print(str(chan0.voltage) + "\t" + str(chan1.voltage) + "\t" + str(chan2.voltage) + "\t" + str(chan3.voltage) + "\n\r")
         #f.write(str(chan0.voltage) + ";" + str(chan1.voltage) + ";" + str(chan2.voltage) + ";" + str(chan3.voltage) + "\n\r")
 except KeyboardInterrupt:
     pass
