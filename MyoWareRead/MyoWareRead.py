@@ -25,16 +25,31 @@ ads.data_rate = 3300
 ads.mode = Mode.CONTINUOUS
 
 
-##åben bil
+##åben fil
 f = open("/mnt/mydisk/1.txt", "a") 
 
+data0 = []
+data1 = []
+data2 = []
+data3 = []
 
 try:
     while True:
-        f.write(str(chan0.value) + ";" + str(chan1.voltage) + ";" + str(chan2.voltage) + ";" + str(chan3.voltage) + "\n\r")
+        data0.append(chan0.voltage)
+        data1.append(chan1.voltage)
+        data2.append(chan2.voltage)
+        data3.append(chan3.voltage)
+        #f.write(str(chan0.voltage) + ";" + str(chan1.voltage) + ";" + str(chan2.voltage) + ";" + str(chan3.voltage) + "\n\r")
 except KeyboardInterrupt:
     pass
 
+print("Gemmer array til fil...")
+
+for i in range(len(data0)):
+    f.write(str(data0[i]) + ";" + str(data1[i]) + ";" + str(data2[i]) + ";" + str(data3[i]) + "\n\r")
+    
+
 f.flush()
 f.close() 
-print("Jeg nåede herned")
+
+print("\nJeg er færdig!")
