@@ -33,6 +33,8 @@ data1 = []
 data2 = []
 data3 = []
 
+start = time.monotonic()
+
 try:
     while True:
         data0.append(chan0.voltage)
@@ -43,7 +45,15 @@ try:
 except KeyboardInterrupt:
     pass
 
+end = time.monotonic()
+
+total_time = end - start
+
+
 print("Gemmer array til fil...")
+
+f.write("Tid: " + str(total_time))
+
 
 for i in range(len(data0)):
     f.write(str(data0[i]) + ";" + str(data1[i]) + ";" + str(data2[i]) + ";" + str(data3[i]) + "\n\r")
