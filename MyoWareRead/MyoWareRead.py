@@ -26,7 +26,7 @@ ads.mode = Mode.CONTINUOUS
 
 
 ##åben fil
-f = open("/mnt/mydisk/1.txt", "a") 
+f = open("/mnt/mydisk/2.txt", "a") 
 
 data0 = []
 data1 = []
@@ -55,7 +55,7 @@ print("Gemmer array til fil...")
 f.write("Tid: " + str(total_time))
 
 
-for i in range(len(data0)):
+for i in range(len(data3)):
     f.write(str(data0[i]) + ";" + str(data1[i]) + ";" + str(data2[i]) + ";" + str(data3[i]) + "\n\r")
     
 
