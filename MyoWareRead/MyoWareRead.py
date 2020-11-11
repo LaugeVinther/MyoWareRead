@@ -26,7 +26,7 @@ chan3 = AnalogIn(ads, ADS.P3)
 
 
 ##åben fil
-f = open("/mnt/mydisk/4.txt", "a") 
+f = open("/mnt/mydisk/1.txt", "a") 
 
 data0 = []
 data1 = []
@@ -43,7 +43,7 @@ try:
         data1.append(chan1.voltage)
         data2.append(chan2.voltage)
         data3.append(chan3.voltage)
-        print(str(chan0.voltage) + "\t" + str(chan1.voltage) + "\t" + str(chan2.voltage) + "\t" + str(chan3.voltage) + "\n\r")
+        #print(str(chan0.voltage) + "\t" + str(chan1.voltage) + "\t" + str(chan2.voltage) + "\t" + str(chan3.voltage) + "\n\r")
         #f.write(str(chan0.voltage) + ";" + str(chan1.voltage) + ";" + str(chan2.voltage) + ";" + str(chan3.voltage) + "\n\r")
 except KeyboardInterrupt:
     pass
@@ -53,7 +53,7 @@ end = time.monotonic()
 total_time = end - start
 
 
-print("Gemmer array til fil...")
+print("\nGemmer array til fil...")
 
 f.write("Tid: " + str(total_time) + "\n\r")
 
