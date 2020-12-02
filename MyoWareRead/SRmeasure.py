@@ -16,7 +16,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 
-ads.data_rate = 3300
+ads.data_rate = 1000
 ads.mode = Mode.CONTINUOUS
 
 # Create single-ended inputs
@@ -30,7 +30,7 @@ data = [None] * SAMPLES
 
 start = time.monotonic()
 
-print("1000 samples med brug af 'data.append(chan0.voltage)'")
+#print("1000 samples med brug af 'data.append(chan0.voltage)'")
 # Read the same channel over and over
 for i in range(SAMPLES):
     #data.append(chan0.voltage)
