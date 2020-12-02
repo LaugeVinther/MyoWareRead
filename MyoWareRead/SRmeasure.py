@@ -16,8 +16,10 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 
+RATE = 128
+
 ads.mode = Mode.CONTINUOUS
-ads.data_rate = 920
+ads.data_rate = RATE
 
 # Create single-ended inputs
 chan0 = AnalogIn(ads, ADS.P0)
@@ -41,6 +43,7 @@ for i in range(SAMPLES):
 end = time.monotonic()
 total_time = end - start
 
-print("Time of capture: {}s".format(total_time))
-print("Actual={}".format(SAMPLES / total_time))
+print("Ønsket datarate: " + str(RATE))
+print("Tid: {}s".format(total_time))
+print("Samplerate={}".format(SAMPLES / total_time))
 
