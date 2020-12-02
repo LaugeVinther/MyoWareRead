@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5b154246-6306-44df-b95c-8a64b3615d61</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SampleRateController.py</StartupFile>
+    <StartupFile>SRmeasure.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

@@ -33,7 +33,8 @@ start = time.monotonic()
 
 # Read the same channel over and over
 for i in range(SAMPLES):
-    data.append(chan0.voltage)
+    #data.append(chan0.voltage)
+    data[i] = chan0.voltage
     #time.sleep(0.001)
     #print(str(chan0.value))
 
