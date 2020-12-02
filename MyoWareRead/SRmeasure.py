@@ -16,7 +16,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 
-RATE = 128
+RATE = 
 
 ads.mode = Mode.CONTINUOUS
 ads.data_rate = RATE
@@ -43,7 +43,7 @@ for i in range(SAMPLES):
 end = time.monotonic()
 total_time = end - start
 
-print("Ønsket datarate: " + str(RATE))
+print("Ønsket samplerate: " + str(RATE))
 print("Tid: {}s".format(total_time))
-print("Samplerate={}".format(SAMPLES / total_time))
+print("Aktuel samplerate: {}".format(SAMPLES / total_time))
 
