@@ -16,8 +16,8 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 
-ads.data_rate = 1000
 ads.mode = Mode.CONTINUOUS
+ads.data_rate = 1600
 
 # Create single-ended inputs
 chan0 = AnalogIn(ads, ADS.P0)
