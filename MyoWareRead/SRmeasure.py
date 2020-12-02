@@ -34,7 +34,7 @@ print("1000 samples med brug af 'data.append(chan0.voltage)'")
 # Read the same channel over and over
 for i in range(SAMPLES):
     #data.append(chan0.voltage)
-    data.append(chan0.voltage)
+    data[i] = chan0.voltage
     #time.sleep(0.001)
     #print(str(chan0.value))
 
